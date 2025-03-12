@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envelope Birthday Wish</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #d26ae2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background: #f8bbd0;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .flap {
+            width: 100%;
+            height: 100%;
+            background: #e91e63;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top;
+            transform: rotateX(0);
+            transition: transform 1s ease;
+        }
+        .message {
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #e91e63;
+            font-size: 1.5em;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 1s ease;
+        }
+        .envelope.opened .flap {
+            transform: rotateX(-180deg);
+        }
+        .envelope.opened .message {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+                <div class="message">ONLY 1 DAY LEFT MY BABE 
+                    I LOVE YOU BABE ! 🎉💖</div>
+    </div>
+
+    <script>
+        function openEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            envelope.classList.add('opened');
+        }
+    </script>
+</body>
+</html>
